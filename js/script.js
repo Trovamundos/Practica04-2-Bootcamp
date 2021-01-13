@@ -21,11 +21,14 @@ var operation = (operationSign) => {
             break;
     }
 
-    resultOperationFunction()
+    document.getElementById('result').value = numberB;
     operator = operationSign;
 }
 
-var resultOperationFunction = () => document.getElementById('result').value = numberB;
+var resultOperationFunction = () => {
+    operation();
+    document.getElementById('result').value = numberB;
+}
 
 document.getElementById('sum').addEventListener('click', function() {operation('sum')});
 document.getElementById('subtraction').addEventListener('click', function() {operation('subtraction')});
